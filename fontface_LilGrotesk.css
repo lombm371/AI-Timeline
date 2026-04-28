@@ -1,0 +1,74 @@
+/* Copyright (c) 2024 by Noir Blanc Rouge. https://noirblancrouge.com | contact@noirblancrouge.com | LilGrotesk. */
+
+@font-face {
+	font-family: "LilGrotesk-Heavy";
+	font-display: auto;
+	src: url("path_to_replace/LilGrotesk-Heavy.woff2") format("woff2"),
+		url("path_to_replace/LilGrotesk-Heavy.woff") format("woff");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "LilGrotesk-Light";
+	font-display: auto;
+	src: url("path_to_replace/LilGrotesk-Light.woff2") format("woff2"),
+		url("path_to_replace/LilGrotesk-Light.woff") format("woff");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "LilGrotesk-Black";
+	font-display: auto;
+	src: url("path_to_replace/LilGrotesk-Black.woff2") format("woff2"),
+		url("path_to_replace/LilGrotesk-Black.woff") format("woff");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "LilGrotesk-Thin";
+	font-display: auto;
+	src: url("path_to_replace/LilGrotesk-Thin.woff2") format("woff2"),
+		url("path_to_replace/LilGrotesk-Thin.woff") format("woff");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "LilGrotesk-Bold";
+	font-display: auto;
+	src: url("path_to_replace/LilGrotesk-Bold.woff2") format("woff2"),
+		url("path_to_replace/LilGrotesk-Bold.woff") format("woff");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "LilGrotesk-Medium";
+	font-display: auto;
+	src: url("path_to_replace/LilGrotesk-Medium.woff2") format("woff2"),
+		url("path_to_replace/LilGrotesk-Medium.woff") format("woff");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "LilGrotesk-Regular";
+	font-display: auto;
+	src: url("path_to_replace/LilGrotesk-Regular.woff2") format("woff2"),
+		url("path_to_replace/LilGrotesk-Regular.woff") format("woff");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "LilGrotesk-ExtraLight";
+	font-display: auto;
+	src: url("path_to_replace/LilGrotesk-ExtraLight.woff2") format("woff2"),
+		url("path_to_replace/LilGrotesk-ExtraLight.woff") format("woff");
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "LilGroteskVF";
+	font-display: auto;
+	src: url("path_to_replace/LilGroteskVF.woff2") format("woff2"),
+		url("path_to_replace/LilGroteskVF.woff") format("woff");
+	font-weight: normal;
+}
+
