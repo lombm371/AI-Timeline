@@ -251,6 +251,60 @@
       font-size: 13px;
       z-index: 2000;
     }
+    #about-btn {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 8px 18px;
+  font-size: 12px;
+  font-family: 'LilGrotesk-Regular', sans-serif;
+  cursor: pointer;
+  z-index: 999;
+  letter-spacing: 0.1em;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+#about-btn:hover { border-color: #fff; }
+
+#about-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+#about-overlay.open { display: flex; }
+
+#about-modal {
+  position: relative;
+  max-width: 480px;
+  width: 90%;
+  color: #fff;
+  font-family: 'LilGrotesk-Regular', sans-serif;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#about-close {
+  position: absolute;
+  top: -32px;
+  right: 0;
+  font-size: 18px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+#about-close:hover { color: #fff; }
   </style>
 </head>
 <body>
@@ -260,12 +314,17 @@
   <div id="track">
     <div id="rail"></div>
   </div>
+<div id="about-overlay">
+  <div id="about-modal">
+    <div id="about-close" onclick="document.getElementById('about-overlay').classList.remove('open')">✕</div>
 
+  </div>
+</div>
   <div id="pip">
     <video id="pip-video" autoplay muted playsinline></video>
     <div id="pip-close" onclick="closePip()">✕</div>
   </div>
-
+<button id="about-btn" onclick="window.location.href='about.html'">About</button>
   <img id="upload-btn" src="IMAGES/Swiss Cross  Mini Canvas - cream _ 30.png" onclick="document.getElementById('file-input').click()">
   <input type="file" id="file-input" accept="image/*,video/*" onchange="onFileSelected(event)" />
 

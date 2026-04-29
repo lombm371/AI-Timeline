@@ -5,21 +5,3 @@ body {
     background-repeat: no-repeat;
 	font-family: "LilGrotesk-Regular", sans-serif;
 }
-.dl-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  font-size: 14px;
-  padding: 4px 8px;
-  text-decoration: none;
-  font-family: 'Segoe UI', sans-serif;
-  z-index: 10;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.cam-card:hover .dl-btn {
-  opacity: 1;
-}
