@@ -8,7 +8,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-       background-image: url("images/Take_the_uploaded_image_and_re_Z-Image_Turbo_37863.jpg");
+       background-color: #888;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -130,18 +130,21 @@
     }
 
     #upload-btn {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 6px 14px;
-      font-size: 12px;
-      font-family: 'Segoe UI', sans-serif;
-      cursor: pointer;
-      z-index: 999;
-    }
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  cursor: pointer;
+  z-index: 999;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+#upload-btn:hover {
+  transform: scale(1.08);
+  filter: brightness(1.2);
+}
 
     #upload-btn:hover { background: rgba(255,255,255,0.2); }
     #file-input { display: none; }
@@ -267,7 +270,7 @@
     <div id="pip-close" onclick="closePip()">✕</div>
   </div>
 
-  <button id="upload-btn" onclick="document.getElementById('file-input').click()">+ Add Media</button>
+  <img id="upload-btn" src="images/Swiss Cross  Mini Canvas - cream _ 30.png" onclick="document.getElementById('file-input').click()">
   <input type="file" id="file-input" accept="image/*,video/*" onchange="onFileSelected(event)" />
 
   <div id="modal-overlay">
