@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="fonts/fontface_LilGrotesk.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Camera Scroll</title>
@@ -8,25 +9,16 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-       background-color: #888;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    overflow: hidden;
+      background-color: #888;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       font-family: "LilGrotesk-Regular", sans-serif;
-    }
-
-    #hint {
-      text-align: center;
-      font-size: 13px;
-      color: #666;
-      padding: 0 0 12px;
-      user-select: none;
-      font-family: 'Segoe UI', sans-serif;
     }
 
     #track {
@@ -57,11 +49,7 @@
     }
 
     .cam-card:hover { border-color: #444; }
-
-    .cam-card video,
-    .cam-card img {
-      display: block;
-    }
+    .cam-card video, .cam-card img { display: block; }
 
     .card-info {
       position: absolute;
@@ -70,7 +58,7 @@
       right: 0;
       background: linear-gradient(transparent, rgba(0,0,0,0.75));
       padding: 20px 8px 6px;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'LilGrotesk-Regular', sans-serif;
     }
 
     .card-title {
@@ -98,7 +86,7 @@
       gap: 8px;
       color: #444;
       font-size: 12px;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'LilGrotesk-Regular', sans-serif;
     }
 
     #pip {
@@ -108,7 +96,6 @@
       right: 20px;
       width: 260px;
       height: 195px;
-      border-radius: 0;
       overflow: hidden;
       border: 2px solid #333;
       background: #000;
@@ -126,27 +113,25 @@
       color: #fff;
       cursor: pointer;
       line-height: 1;
-      font-family: 'Segoe UI', sans-serif;
     }
 
     #upload-btn {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  cursor: pointer;
-  z-index: 999;
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      cursor: pointer;
+      z-index: 999;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
 
-#upload-btn:hover {
-  transform: scale(1.08);
-  filter: brightness(1.2);
-}
+    #upload-btn:hover {
+      transform: scale(1.08);
+      filter: brightness(1.2);
+    }
 
-    #upload-btn:hover { background: rgba(255,255,255,0.2); }
     #file-input { display: none; }
 
     #modal-overlay {
@@ -162,52 +147,65 @@
     #modal-overlay.open { display: flex; }
 
     #modal {
-      background: #1a1a1a;
-      border: 1px solid #333;
-      padding: 24px;
-      width: 340px;
-      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+      width: 420px;
+      height: 420px;
+      font-family: "LilGrotesk-Regular", sans-serif;
       color: #fff;
+      background: none;
+      border: none;
+      padding: 0;
+      margin: auto;
+    }
+
+    #modal-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    #modal-inner {
+      position: relative;
+      z-index: 1;
+      padding: 100px 80px 60px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
     #modal h2 {
       font-size: 15px;
       font-weight: 600;
-      margin-bottom: 18px;
+      margin-bottom: 10px;
       color: #fff;
-    }
-
-    #modal-preview {
-      width: 100%;
-      height: 140px;
-      object-fit: contain;
-      display: block;
-      margin-bottom: 16px;
-      background: #111;
     }
 
     #modal label {
       display: block;
       font-size: 11px;
-      color: #888;
-      margin-bottom: 5px;
+      color: #ddd;
+      margin-bottom: 4px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
     #modal input {
       width: 100%;
-      background: #111;
-      border: 1px solid #333;
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.2);
       color: #fff;
-      padding: 8px 10px;
+      padding: 7px 10px;
       font-size: 13px;
-      font-family: 'Segoe UI', sans-serif;
-      margin-bottom: 14px;
+      font-family: 'LilGrotesk-Regular', sans-serif;
+      margin-bottom: 10px;
       outline: none;
     }
 
-    #modal input:focus { border-color: #555; }
+    #modal input:focus { border-color: rgba(255,255,255,0.5); }
 
     #modal-buttons {
       display: flex;
@@ -218,15 +216,15 @@
 
     #modal-cancel {
       background: transparent;
-      border: 1px solid #444;
+      border: 1px solid rgba(255,255,255,0.3);
       color: #aaa;
       padding: 7px 16px;
       font-size: 12px;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'LilGrotesk-Regular', sans-serif;
       cursor: pointer;
     }
 
-    #modal-cancel:hover { border-color: #666; color: #fff; }
+    #modal-cancel:hover { border-color: #fff; color: #fff; }
 
     #modal-confirm {
       background: #fff;
@@ -234,7 +232,7 @@
       color: #000;
       padding: 7px 16px;
       font-size: 12px;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'LilGrotesk-Regular', sans-serif;
       cursor: pointer;
       font-weight: 600;
     }
@@ -248,7 +246,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'LilGrotesk-Regular', sans-serif;
       color: #444;
       font-size: 13px;
       z-index: 2000;
@@ -258,8 +256,6 @@
 <body>
 
   <div id="loading">Loading saved media...</div>
-
-  <!-- <div id="hint">scroll down → move right &nbsp;|&nbsp; scroll up → move left</div> -->
 
   <div id="track">
     <div id="rail"></div>
@@ -275,15 +271,17 @@
 
   <div id="modal-overlay">
     <div id="modal">
-      <h2>Add Media</h2>
-      <img id="modal-preview" src="" alt="preview" />
-      <label>Title (optional)</label>
-      <input type="text" id="modal-title" placeholder="e.g. Beach Trip" />
-      <label>Date Found</label>
-      <input type="date" id="modal-date" />
-      <div id="modal-buttons">
-        <button id="modal-cancel" onclick="closeModal()">Cancel</button>
-        <button id="modal-confirm" onclick="confirmMedia()">Add</button>
+      <img id="modal-bg" src="IMAGES/broken-concrete-wall-with-cracks-and-peeling-texture-set-against-a-clear-white-background-broken-concrete-cement-wall-isolated-background-free-png.png">
+      <div id="modal-inner">
+        <h2>Add Media</h2>
+        <label>Title (optional)</label>
+        <input type="text" id="modal-title" placeholder="e.g. Beach Trip" />
+        <label>Date Found</label>
+        <input type="date" id="modal-date" />
+        <div id="modal-buttons">
+          <button id="modal-cancel" onclick="closeModal()">Cancel</button>
+          <button id="modal-confirm" onclick="confirmMedia()">Add</button>
+        </div>
       </div>
     </div>
   </div>
@@ -300,7 +298,6 @@
     const pip = document.getElementById('pip');
     const pipVideo = document.getElementById('pip-video');
     const modalOverlay = document.getElementById('modal-overlay');
-    const modalPreview = document.getElementById('modal-preview');
     const loadingScreen = document.getElementById('loading');
 
     let offset = 0;
@@ -309,8 +306,6 @@
     let pendingFile = null;
     let mediaItems = [];
     let db;
-
-    // ---- IndexedDB ----
 
     function openDB() {
       return new Promise((resolve, reject) => {
@@ -346,8 +341,6 @@
       });
     }
 
-    // ---- Get natural dimensions ----
-
     function getImageDimensions(url) {
       return new Promise((resolve) => {
         const img = new Image();
@@ -371,14 +364,10 @@
       return { w: Math.round(w * scale), h: Math.round(h * scale) };
     }
 
-    // ---- Modal ----
-
     function onFileSelected(event) {
       const file = event.target.files[0];
       if (!file) return;
       pendingFile = file;
-      const url = URL.createObjectURL(file);
-      modalPreview.src = url;
       document.getElementById('modal-title').value = '';
       document.getElementById('modal-date').value = '';
       modalOverlay.classList.add('open');
@@ -388,7 +377,6 @@
     function closeModal() {
       modalOverlay.classList.remove('open');
       pendingFile = null;
-      modalPreview.src = '';
     }
 
     async function confirmMedia() {
@@ -420,20 +408,18 @@
       closeModal();
     }
 
-    // ---- Rail ----
-
     function rebuildRail() {
-  rail.innerHTML = '';
-  if (mediaItems.length === 0) {
-    for (let i = 0; i < NUM_CAMS; i++) rail.appendChild(buildCameraCard());
-    return;
-  }
-  for (const item of mediaItems) {
-    rail.appendChild(buildCameraCard()); // camera BEFORE each item
-    rail.appendChild(buildMediaCard(item));
-  }
-  rail.appendChild(buildCameraCard()); // one trailing camera at the end
-}
+      rail.innerHTML = '';
+      if (mediaItems.length === 0) {
+        for (let i = 0; i < NUM_CAMS; i++) rail.appendChild(buildCameraCard());
+        return;
+      }
+      for (const item of mediaItems) {
+        rail.appendChild(buildCameraCard());
+        rail.appendChild(buildMediaCard(item));
+      }
+      rail.appendChild(buildCameraCard());
+    }
 
     function buildMediaCard(item) {
       const card = document.createElement('div');
@@ -500,7 +486,6 @@
         video.style.height = '100%';
         video.style.objectFit = 'cover';
         card.appendChild(video);
-        // card.addEventListener('click', () => togglePip(-1));
       } else {
         const noFeed = document.createElement('div');
         noFeed.className = 'no-feed';
@@ -516,8 +501,6 @@
 
       return card;
     }
-
-    // ---- Scroll ----
 
     function maxOffset() {
       return Math.max(0, rail.scrollWidth - track.clientWidth);
@@ -543,8 +526,6 @@
       applyOffset();
     });
 
-    // ---- PiP ----
-
     function closePip() {
       pip.style.display = 'none';
       pipVideo.srcObject = null;
@@ -559,8 +540,6 @@
         activePip = idx;
       }
     }
-
-    // ---- Init ----
 
     async function init() {
       db = await openDB();
